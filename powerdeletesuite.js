@@ -413,7 +413,7 @@ var pd = {
           pd.actions.page.next();
         } else if (shouldBeActedOn) {
           if (!item.pdEdited && ((item.data.is_self || item.kind == 't1') && pd.task.config.isEditing)) {
-            pd.actions.edit(item);
+            setTimeout(pd.actions.edit(item), 5100);
           } else if (!item.pdDeleted && ((item.kind == 't3' && pd.task.config.isRemovingPosts) || (item.kind == 't1' && pd.task.config.isRemovingComments))) {
             pd.actions.delete(item);
           } else {
